@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>liste des videos</title>
+</head>
+<body>
+
+    <table>
+        <thead>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td>URL</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="video : ${videoList}">
+            <td th:text="${video.name}">Video Name</td>
+            <td th:text="${video.description}">Video Description</td>
+            <td><a th:href="@{${video.url}}" th:text="${video.url}">Video URL</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>
